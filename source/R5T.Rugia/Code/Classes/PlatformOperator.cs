@@ -11,7 +11,7 @@ namespace R5T.Rugia
         #region Static
 
         /// <summary>
-        /// Allows getting/setting the platform used in other code.
+        /// Allows explicitly getting/setting the platform for use in all code.
         /// </summary>
         public static Platform Platform { get; set; }
 
