@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Rugia.Construction", "R5T.Rugia.Construction\R5T.Rugia.Construction.csproj", "{09E8B104-1E25-443D-AE77-21D377A19912}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Rugia.Construction", "R5T.Rugia.Construction\R5T.Rugia.Construction.csproj", "{09E8B104-1E25-443D-AE77-21D377A19912}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Rugia", "R5T.Rugia\R5T.Rugia.csproj", "{457A019E-0811-489C-8124-861137280D9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Rugia", "R5T.Rugia\R5T.Rugia.csproj", "{457A019E-0811-489C-8124-861137280D9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R5T.Rugia.Testing", "R5T.Rugia.Testing\R5T.Rugia.Testing.csproj", "{A78BB24F-9D39-474E-98CB-EAE0FA340E8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Rugia.Testing", "R5T.Rugia.Testing\R5T.Rugia.Testing.csproj", "{A78BB24F-9D39-474E-98CB-EAE0FA340E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{4C0ADFD3-796B-4816-B4F2-5D7351C4CD44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.Magyar", "..\..\R5T.Magyar\source\R5T.Magyar\R5T.Magyar.csproj", "{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{09E8B104-1E25-443D-AE77-21D377A19912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +59,26 @@ Global
 		{A78BB24F-9D39-474E-98CB-EAE0FA340E8D}.Release|x64.Build.0 = Release|Any CPU
 		{A78BB24F-9D39-474E-98CB-EAE0FA340E8D}.Release|x86.ActiveCfg = Release|Any CPU
 		{A78BB24F-9D39-474E-98CB-EAE0FA340E8D}.Release|x86.Build.0 = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|x64.Build.0 = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Debug|x86.Build.0 = Debug|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|x64.ActiveCfg = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|x64.Build.0 = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|x86.ActiveCfg = Release|Any CPU
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA93F8CF-4C30-467D-8DAA-C07A29F6DC9E} = {4C0ADFD3-796B-4816-B4F2-5D7351C4CD44}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69E1027C-6478-4E63-90B6-C765898C8805}
 	EndGlobalSection
 EndGlobal
