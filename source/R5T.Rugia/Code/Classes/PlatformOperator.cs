@@ -11,9 +11,14 @@ namespace R5T.Rugia
         #region Static
 
         /// <summary>
-        /// Allows explicitly getting/setting the platform for use in all code.
+        /// Allows indirection to explicitly get/set the platform for use in all code.
         /// </summary>
         public static Platform Platform { get; set; }
+        /// <summary>
+        /// The actual platform value for the machine on which code is currently executing.
+        /// The value is produced by <see cref="Utilities.GetExecutingMachinePlatform"/>.
+        /// </summary>
+        public static Platform ExecutingMachinePlatform => Utilities.GetExecutingMachinePlatform();
 
 
         static PlatformOperator()
@@ -26,7 +31,7 @@ namespace R5T.Rugia
         /// </summary>
         public static void Reset()
         {
-            PlatformOperator.Platform = Utilities.GetExecutingMachinePlatform();
+            PlatformOperator.Platform = PlatformOperator.ExecutingMachinePlatform;
         }
 
         #endregion
