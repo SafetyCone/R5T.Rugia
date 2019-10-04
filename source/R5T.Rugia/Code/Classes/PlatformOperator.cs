@@ -23,13 +23,13 @@ namespace R5T.Rugia
 
         static PlatformOperator()
         {
-            PlatformOperator.Reset();
+            PlatformOperator.ResetPlatform();
         }
 
         /// <summary>
         /// Sets the <see cref="PlatformOperator.Platform"/> to the value produced by <see cref="Utilities.GetExecutingMachinePlatform"/>.
         /// </summary>
-        public static void Reset()
+        public static void ResetPlatform()
         {
             PlatformOperator.Platform = PlatformOperator.ExecutingMachinePlatform;
         }
