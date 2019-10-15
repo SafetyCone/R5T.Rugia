@@ -1,39 +1,73 @@
 ﻿using System;
 
+using R5T.Rugia.Base;
+using R5T.Rugia.Extensions;
+
+using BaseUtilities = R5T.Rugia.Base.Utilities;
+
 
 namespace R5T.Rugia
 {
     /// <summary>
     /// An instantiable operator class allowing access to platform operations.
     /// </summary>
-    public class PlatformOperator
+    public class PlatformOperator : IPlatformOperator
     {
-        #region Static
+        public string WindowsPlatformStandardRepresentation => Constants.WindowsPlatformStandardRepresentation;
+        public string NonWindowsPlatformStandardRepresentation => Constants.NonWindowsPlatformStandardRepresentation;
 
+
+        private object SynchronizationValue { get; } = new object();
+        private Platform zPlatform;
         /// <summary>
-        /// Allows indirection to explicitly get/set the platform for use in all code.
+        /// Thread-safe.
         /// </summary>
-        public static Platform Platform { get; set; }
-        /// <summary>
-        /// The actual platform value for the machine on which code is currently executing.
-        /// The value is produced by <see cref="Utilities.GetExecutingMachinePlatform"/>.
-        /// </summary>
-        public static Platform ExecutingMachinePlatform => Utilities.GetExecutingMachinePlatform();
-
-
-        static PlatformOperator()
+        public Platform Platform
         {
-            PlatformOperator.ResetPlatform();
+            get
+            {
+                return this.zPlatform;
+            }
+            set
+            {
+                lock (this.SynchronizationValue)
+                {
+                    this.zPlatform = value;
+                }
+            }
+        }
+        public Platform ExecutingMachinePlatform => BaseUtilities.GetExecutingMachinePlatform();
+
+
+        public PlatformOperator()
+        {
+            this.ResetPlatform();
+        }
+
+        public Platform GetAlternatePlatform(Platform platform)
+        {
+            var alternatePlatform = Utilities.GetAlternatePlatform(platform);
+            return alternatePlatform;
         }
 
         /// <summary>
-        /// Sets the <see cref="PlatformOperator.Platform"/> to the value produced by <see cref="Utilities.GetExecutingMachinePlatform"/>.
+        /// Thread-safe.
         /// </summary>
-        public static void ResetPlatform()
+        public void ResetPlatform()
         {
-            PlatformOperator.Platform = PlatformOperator.ExecutingMachinePlatform;
+            this.Platform = this.ExecutingMachinePlatform;
         }
 
-        #endregion
+        public Platform ToPlatformFromStandard(string standardPlatformRepresentation)
+        {
+            var output = standardPlatformRepresentation.ToPlatform();
+            return output;
+        }
+
+        public string ToStringStandard(Platform platform)
+        {
+            var output = platform.ToStringStandard();
+            return output;
+        }
     }
 }

@@ -2,6 +2,8 @@
 
 using R5T.Magyar;
 
+using BaseConstants = R5T.Rugia.Base.Constants;
+
 
 namespace R5T.Rugia.Extensions
 {
@@ -11,10 +13,10 @@ namespace R5T.Rugia.Extensions
         {
             switch(representation)
             {
-                case PlatformExtensions.WindowsStandardRepresentation:
+                case BaseConstants.WindowsPlatformStandardRepresentation:
                     return Platform.Windows;
 
-                case PlatformExtensions.NonWindowsStandardRepresentation:
+                case BaseConstants.NonWindowsPlatformStandardRepresentation:
                     return Platform.NonWindows;
 
                 default:

@@ -2,15 +2,13 @@
 
 using R5T.Magyar;
 
+using BaseConstants = R5T.Rugia.Base.Constants;
+
 
 namespace R5T.Rugia
 {
     public static class PlatformExtensions
     {
-        public const string WindowsStandardRepresentation = @"Windows";
-        public const string NonWindowsStandardRepresentation = @"NonWindows";
-
-
         /// <summary>
         /// Returns the standard string representation of the platform enumeration value.
         /// </summary>
@@ -19,10 +17,10 @@ namespace R5T.Rugia
             switch (platform)
             {
                 case Platform.NonWindows:
-                    return PlatformExtensions.NonWindowsStandardRepresentation;
+                    return BaseConstants.NonWindowsPlatformStandardRepresentation;
 
                 case Platform.Windows:
-                    return PlatformExtensions.WindowsStandardRepresentation;
+                    return BaseConstants.WindowsPlatformStandardRepresentation;
 
                 default:
                     var message = EnumHelper.UnexpectedEnumerationValueMessage(platform);
@@ -33,7 +31,7 @@ namespace R5T.Rugia
         /// <summary>
         /// Returns the alternate platform.
         /// </summary>
-        public static Platform AlternatePlatform(this Platform platform)
+        public static Platform GetAlternatePlatform(this Platform platform)
         {
             var alternatePlatform = Utilities.GetAlternatePlatform(platform);
             return alternatePlatform;
