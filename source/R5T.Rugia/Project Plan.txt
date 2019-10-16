@@ -1,4 +1,5 @@
-R5T.Rugia - A library for explicitly representing the platform on which code is running.
+R5T.Rugia - A library for explicitly representing the platform (Windows or non-Windows) on which code is running. This includes determining which platfrom code is currently running on, and providing an enumeration allowing parameterization of platform (for example, in generating paths for one platform on a different platform).
 
 Goals
 
+* Provide both static and instance (serviced based) access to functionality.
