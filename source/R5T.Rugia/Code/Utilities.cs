@@ -21,8 +21,7 @@ namespace R5T.Rugia
                     return Platform.NonWindows;
 
                 default:
-                    var message = EnumHelper.UnexpectedEnumerationValueMessage(platform);
-                    throw new Exception(message);
+                    throw EnumerationHelper.UnexpectedEnumerationValueException(platform);
             }
         }
     }

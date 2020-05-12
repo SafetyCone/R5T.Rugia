@@ -23,8 +23,7 @@ namespace R5T.Rugia
                     return BaseConstants.WindowsPlatformStandardRepresentation;
 
                 default:
-                    var message = EnumHelper.UnexpectedEnumerationValueMessage(platform);
-                    throw new Exception(message);
+                    throw EnumerationHelper.UnexpectedEnumerationValueException(platform);
             }
         }
 

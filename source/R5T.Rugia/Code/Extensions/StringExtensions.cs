@@ -20,8 +20,7 @@ namespace R5T.Rugia.Extensions
                     return Platform.NonWindows;
 
                 default:
-                    var message = EnumHelper.UnrecognizedEnumerationValueMessage<Platform>(representation);
-                    throw new Exception(message);
+                    throw EnumerationHelper.UnrecognizedEnumerationValueException<Platform>(representation);
             }
         }
     }
